@@ -48,7 +48,7 @@ function addShoppinglist(item)
     groc += MyItems[x];
     if (count===0)
     {
-      groc += " | ";
+      //groc += " | ";
     }
     //increment count by 1
     count++;
