@@ -1,0 +1,10 @@
+input[type=button] {
+    vertical-align:middle;
+    margin: 40 5px;
+    background-color: #bd85b1;
+}
+input[value="Add Item"] {
+    vertical-align:middle;
+    margin: 40 5px;
+    background-color: #85bd8e;
+}
