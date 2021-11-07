@@ -81,7 +81,7 @@ function clearFocus()
   //v 2.1: clear inputbox value out by id
   document.getElementById("item").value = "";
   //v 3.0 clear cost field
-  document.getElementById("cost").value = "";
+  //document.getElementById("cost").value = "";
   //v 2.1: set focus on inputbox after text is cleared
   document.getElementById("item").focus();
 }
@@ -90,12 +90,13 @@ function clearFocus()
 function changeShoppinglist(position) {
  var arrays = shoppinglist[position];
  arrays = arrays.split("|");
-   var e1 = arrays[0];
-  var e2 = arrays[1];
-var ReplacedAmount = e2.replace(/\$/g,'');
+ var e1 = arrays[0];
+ var e2 = arrays[1];
+ var ReplacedAmount = e2.replace(/\$/g,'');
  var eitem = prompt("Please enter new item", e1);
  var ecost = prompt("Please enter your name", ReplacedAmount);
- shoppinglist[position] = eitem + " | " + '$' + ecost;
+ //shoppinglist[position] = eitem + " | " + '$' + ecost;
+ shoppinglist[position] = eitem;
  displayShoppinglists();
  displayShoppingCart()
 }
@@ -105,12 +106,13 @@ function changeShoppingCart(position) {
   document.getElementById("MyCart").innerHTML = shoppinglist[position];
   var arrays = addtocart[position];
   arrays = arrays.split(",");
-    var e1 = arrays[0];
-   var e2 = arrays[1];
- var ReplacedAmount = e2.replace(/\$/g,'');
+  var e1 = arrays[0];
+  var e2 = arrays[1];
+  var ReplacedAmount = e2.replace(/\$/g,'');
   var eitem = prompt("Please enter new item", e1);
   var ecost = prompt("Please enter your name", ReplacedAmount);
-  addtocart[position] = eitem + "," + '$' + ecost;
+  //addtocart[position] = eitem + "," + '$' + ecost;
+  addtocart[position] = eitem;
   displayShoppinglists();
   displayShoppingCart() 
 }
