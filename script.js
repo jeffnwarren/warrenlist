@@ -1,8 +1,16 @@
 // Jeff Warren s0203223
 // Fall 2021
 // Web233 Javascript
-// Date: 10/31/2021
-// Shopping List App Version 4.0
+// Date: 11/7/2021 (Week 13 Assignment)
+// Shopping List App Version 4.0 (GitHub version)
+
+//v4.0 Add popup describing app when visitors load webpage the first time
+window.onload = function() {
+alert("Welcome to 'Shopping List' App!\n\nCreated by Rock Valley College student Jeff Warren\n**Javascript(Web233)");
+populateshoppinglistonload();
+displayShoppinglists();
+clearFocus();
+};
 
 //create empty shoppinglist array to store items
 var shoppinglist = [];
@@ -12,12 +20,14 @@ var addtocart = [];
 
 //v 3.0 Create Objects for shoppinglist
 var MyItems = {
-  name:"",
-  price:""
+  //name:"",
+  name:""
+  //price:""
 };
 
 //v 3.0 Update function addShoppinglist by adding objects
-function addShoppinglist(item,cost) 
+//function addShoppinglist(item,cost)
+function addShoppinglist(item)
 {
   //v 3.0 declare variable for groc string
   var groc="";
@@ -26,7 +36,7 @@ function addShoppinglist(item,cost)
   //v 3.0 edit value for MyItems.name
   MyItems.name=item;
   //v 3.0 edit value for MyItems.cost
-  MyItems.price=cost;
+  //MyItems.price=cost;
   //v 3.0 for loop through object propterties and 
   for (var x in MyItems)
   {
