@@ -2,7 +2,7 @@
 // Fall 2021
 // Web233 Javascript
 // Date: 11/7/2021 (Week 13 Assignment)
-// Shopping List App Version 4.0 (GitHub version)
+// Shopping List App (GitHub version 1)
 
 //v4.0 Add popup describing app when visitors load webpage the first time
 window.onload = function() {
