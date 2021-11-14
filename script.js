@@ -168,7 +168,7 @@ function displayShoppinglists() {
   var btndelete =  ' <input class="button" id="remove" name="delete" type="button" value="Remove" onclick="deleteShoppinglists(' + i + ')" />';
   var arrays = shoppinglist[i];
   arrays = "'"+arrays+"'";
-  var btnaddcart =  '<input name="add" type="checkbox" id="adds" value="Add to Shopping Cart" onclick="addtoshopcart('+arrays+','+ i +')" />';
+  var btnaddcart =  '<input name="add" type="button" id="adds" value="Add to Shopping Cart" onclick="addtoshopcart('+arrays+','+ i +')" />';
   //Week 14 Add Share Button
   var btnsharelist = '<input class="button" id="shares" name="shares" type="submit" value="Share Shopping List" onclick="share()" />';
   TheRow = '<li>' + shoppinglist[i] + btndelete + ' '  + btnaddcart + '</li>';
@@ -200,7 +200,7 @@ var btndelete =  ' <input class="button" id="remove" name="delete" type="button"
 var arrays = addtocart[i];
 arrays = "'"+arrays+"'";
 //v 3.2 change add button to checkbox
-var btnaddlist =  '<label><input name="add" type="checkbox" id="adds" value="Add to Shopping List" onclick="addbacktoshoppinglist('+arrays+',' + i + ')" checked="checked"/>Add</label>';
+var btnaddlist =  '<label><input name="add" type="button" id="adds" value="Add to Shopping List" onclick="addbacktoshoppinglist('+arrays+',' + i + ')" checked="checked"/>Add</label>';
 TheRow =  "<li>" + addtocart[i] + '&emsp;' + btndelete + ' ' +  ' ' + btnaddlist + '<br></li>';
 TheList += TheRow;
 }
