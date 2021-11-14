@@ -141,6 +141,7 @@ function addtoshopcart(item, num) {
   clearFocus();
 }
 
+/*
 //v 3.1
 function displayShoppinglists() {
 var TheList = "";
@@ -154,6 +155,37 @@ var btnaddcart =  ' <input class="button" name="add" type="button" value="Add to
 TheList = TheList + shoppinglist[i] + '&emsp;' + btndelete + ' ' +  btnupdate + ' ' + btnaddcart + '<br>';
 }
 document.getElementById("MyList").innerHTML = 'Shopping List ' + '<br>' + TheList;
+}
+*/
+
+//Update ShoppingList Week 14
+function displayShoppinglists() {
+  document.getElementById("MyList").innerHTML = '';
+  var TheList = "";
+  var TheRow = "";
+  var arrayLength = shoppinglist.length;
+  for (var i = 0; i < shoppinglist.length; i++) {
+  var btndelete =  ' <input class="button" id="remove" name="delete" type="button" value="Remove" onclick="deleteShoppinglists(' + i + ')" />';
+  var arrays = shoppinglist[i];
+  arrays = "'"+arrays+"'";
+  var btnaddcart =  '<input name="add" type="checkbox" id="adds" value="Add to Shopping Cart" onclick="addtoshopcart('+arrays+','+ i +')" />';
+  //Week 14 Add Share Button
+  var btnsharelist = '<input class="button" id="shares" name="shares" type="submit" value="Share Shopping List" onclick="share()" />';
+  TheRow = '<li>' + shoppinglist[i] + btndelete + ' '  + btnaddcart + '</li>';
+  TheList += TheRow;
+}
+if (arrayLength > 0)
+{
+  document.getElementById("MyList").innerHTML = '<ul>' + TheList + '</ul>';
+  //Week 14 Add Share Button if arraylist contains values 
+  document.getElementById("sharebutton").innerHTML = btnsharelist;
+}else
+{
+  document.getElementById("MyList").innerHTML = ' ';
+  //Week 14 Remove Share Button and Sharelist if arraylist contains values 
+  document.getElementById("sharebutton").innerHTML = ' ';
+  document.getElementById("sharelist").innerHTML = ' ';
+}
 }
 
 //v3.2
