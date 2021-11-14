@@ -251,3 +251,41 @@ function remove_unwanted(str) {
   return str.replace(/[^\x20-\x7E]/g, '');  
 } 
 
+//v4.1 get values via URL
+function get(name){
+    var url = window.location.search;
+    var num = url.search(name);
+    var namel = name.length;
+    var frontlength = namel+num+1; //length of everything before the value
+    var front = url.substring(0, frontlength);
+    url = url.replace(front, "");
+    num = url.search("&");
+    if(num>=0) return url.substr(0,num);
+    if(num<0)  return url;
+}
+//ShareList passbyvalues Week 14
+function passlist()
+{
+ var url = "https://jeffnwarren.github.io/warrenlist/index.html?list="+ shoppinglist;
+ //Week 14 add link to sharelist id
+      document.getElementById("sharelist").innerHTML = 'Share List:\n' + url;
+ //Copy URL
+      copyToClipboard(url);
+}
+//vFinal share function
+function share()
+{
+   passlist();
+}
+//Copy URL Week 14
+function copyToClipboard(text) {
+  var passbyurl = document.createElement("textarea");
+  passbyurl.value = text;
+  document.body.appendChild(passbyurl);
+  passbyurl.focus();
+  passbyurl.select();
+  document.execCommand("copy");
+  document.body.removeChild(passbyurl);
+  alert("URL has been copied. Ready to share: " + text);
+  //window.prompt("Copy & Share List!", text);   
+}
