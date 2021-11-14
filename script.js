@@ -321,3 +321,26 @@ function copyToClipboard(text) {
   alert("URL has been copied. Ready to share: " + text);
   //window.prompt("Copy & Share List!", text);   
 }
+
+//week 14
+function populateshoppinglistonload()
+{
+  shoppinglist = [];
+  addtocart = [];
+  //load cookie into array
+  var y = readCookie('konkollist');
+  //remove unwanted chars and format
+  y = remove_unwanted(y); 
+  //spit array by comma %2C
+  
+   //v 4.1 get URL
+  var geturllistvalue = get("list");
+    if (geturllistvalue) {
+        geturllistvalue = remove_unwanted(geturllistvalue);
+      geturllistvalue = geturllistvalue.split(',');
+      shoppinglist = geturllistvalue;
+  }else if (y){
+       y = y.split('%2C');
+      shoppinglist = y;
+  }
+}
